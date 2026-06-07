@@ -20,6 +20,7 @@ const requiredFiles = [
   ".github/workflows/deploy-github-pages.yml",
   "public/favicon.svg",
   "src/pages/index.astro",
+  "src/components/ServiceGallery.astro",
   "src/styles/global.css",
   "src/data/site.ts",
   "src/data/services.ts",
@@ -96,6 +97,8 @@ const page = read("src/pages/index.astro");
 for (const snippet of [
   "Header",
   "Hero",
+  "ServiceGallery",
+  "服務圖片總覽",
   "服務快捷入口",
   "關於我們",
   "搬屋服務已包括",
@@ -112,6 +115,35 @@ for (const snippet of [
 ]) {
   assert.ok(page.includes(snippet), `index.astro should include ${snippet}`);
 }
+
+const servicesData = read("src/data/services.ts");
+assert.ok(servicesData.includes("serviceGalleryImages"), "services data should include serviceGalleryImages");
+const galleryData = servicesData.slice(
+  servicesData.indexOf("export const serviceGalleryImages"),
+  servicesData.indexOf("export const includedServices")
+);
+
+const galleryImageOrder = [
+  "service-home-moving.png",
+  "booking-whatsapp.png",
+  "service-office-moving.png",
+  "service-packing.png",
+  "service-storage.png",
+  "packing-box.png",
+  "packing-bubble-wrap.png",
+  "packing-tape.png",
+  "footer-cta-bg.png",
+];
+
+let previousIndex = -1;
+for (const fileName of galleryImageOrder) {
+  const currentIndex = galleryData.indexOf(fileName);
+  assert.ok(currentIndex > previousIndex, `${fileName} should appear in gallery order`);
+  previousIndex = currentIndex;
+}
+
+const galleryComponent = read("src/components/ServiceGallery.astro");
+assert.ok(galleryComponent.includes("object-contain"), "gallery images should show the full picture");
 
 for (const filePath of ["README.md", "DEPLOY_GITHUB_PAGES.md", "DOMAIN_SETUP.md", "TODO_FOR_BOSS.md"]) {
   const content = read(filePath);

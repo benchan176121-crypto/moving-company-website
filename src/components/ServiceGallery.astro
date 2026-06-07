@@ -1,0 +1,33 @@
+---
+import { serviceGalleryImages } from "@data/services";
+import { assetPath } from "@utils/paths";
+---
+
+<section id="service-gallery" class="bg-slate-50 py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="section-heading">
+      <span>服務圖片總覽</span>
+      <h2>除首頁大圖外，其餘圖片全部展示</h2>
+    </div>
+    <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {serviceGalleryImages.map((item, index) => (
+        <article class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+          <div class="flex aspect-[4/3] items-center justify-center bg-slate-100">
+            <img
+              class="h-full w-full object-contain"
+              src={assetPath(item.image)}
+              width="1200"
+              height="900"
+              alt={item.title}
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-sm font-black text-amberline">{String(index + 1).padStart(2, "0")}</span>
+            <h3 class="mt-2 text-xl font-black text-ink">{item.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
