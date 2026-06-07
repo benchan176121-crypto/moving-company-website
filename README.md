@@ -75,7 +75,7 @@ https://<github-username>.github.io/moving-company/
 
 ### 可以接自己域名嗎？
 
-可以。先睇 `DOMAIN_SETUP.md`。正式用 domain 前，記得將 `public/CNAME` 入面嘅 `www.your-domain.com` 改成你自己 domain。
+可以。先睇 `DOMAIN_SETUP.md`。正式用 domain 前，叫 Codex 幫你新增 `public/CNAME`，內容填你自己 domain，例如 `www.fastmoving.com.hk`。
 
 ### 點解唔用 backend？
 

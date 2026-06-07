@@ -18,7 +18,6 @@ const requiredFiles = [
   "tailwind.config.mjs",
   "tsconfig.json",
   ".github/workflows/deploy-github-pages.yml",
-  "public/CNAME",
   "public/favicon.svg",
   "src/pages/index.astro",
   "src/styles/global.css",
@@ -81,8 +80,6 @@ assert.ok(!workflow.includes("NETLIFY"), "workflow should not use Netlify secret
 assert.ok(!workflow.includes("VERCEL"), "workflow should not use Vercel secrets");
 assert.ok(!workflow.includes("CLOUDFLARE"), "workflow should not use Cloudflare secrets");
 
-assert.equal(read("public/CNAME").trim(), "www.your-domain.com", "CNAME should contain placeholder domain");
-
 const siteData = read("src/data/site.ts");
 for (const snippet of [
   "快靚正搬屋公司 / 貨運公司",
@@ -124,6 +121,7 @@ for (const filePath of ["README.md", "DEPLOY_GITHUB_PAGES.md", "DOMAIN_SETUP.md"
 
 const domainDoc = read("DOMAIN_SETUP.md");
 for (const snippet of [
+  "public/CNAME",
   "CNAME",
   "<github-username>.github.io",
   "A record",

@@ -2,21 +2,17 @@
 
 呢份用廣東話講清楚點樣將 GitHub Pages 網站接去自己 domain。
 
-## 先改 CNAME
+## 先講重點
 
-專案入面有：
+第一階段如果只用 GitHub 免費網址，唔好放 placeholder CNAME，否則 GitHub 可能會以為你已經要接正式 domain。
+
+等你準備接正式 domain，先建立：
 
 ```txt
 public/CNAME
 ```
 
-目前內容係 placeholder：
-
-```txt
-www.your-domain.com
-```
-
-到你有正式 domain，就改成例如：
+內容填正式網址，例如：
 
 ```txt
 www.fastmoving.com.hk
