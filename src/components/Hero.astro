@@ -1,0 +1,49 @@
+---
+import { heroHighlights, site, trustPoints } from "@data/site";
+import { assetPath } from "@utils/paths";
+---
+
+<section id="top" class="relative isolate overflow-hidden bg-ink text-white">
+  <img
+    class="absolute inset-0 -z-20 h-full w-full object-cover"
+    src={assetPath("/images/hero-moving-truck.png")}
+    width="1800"
+    height="1100"
+    alt="快靚正搬屋公司貨車及搬屋團隊"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/75 via-black/48 to-black/20"></div>
+  <div class="mx-auto grid min-h-[650px] max-w-6xl content-center px-4 py-16 sm:py-20">
+    <div class="max-w-3xl">
+      <p class="mb-4 inline-flex rounded-full bg-white/12 px-4 py-2 text-sm font-bold text-amberline ring-1 ring-white/20">
+        {site.slogan}
+      </p>
+      <h1 class="text-4xl font-black leading-tight sm:text-6xl">
+        香港搬屋、搬運、傢俬拆裝同存倉，一個 WhatsApp 搞掂
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-white/90">
+        {site.description}
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="rounded-full bg-amberline px-6 py-3 font-black text-ink hover:bg-white" href={site.whatsappHref}>
+          WhatsApp 傳相報價
+        </a>
+        <a class="rounded-full border border-white/60 px-6 py-3 font-black text-white hover:bg-white hover:text-ink" href={site.phoneHref}>
+          即刻打電話
+        </a>
+      </div>
+      <div class="mt-8 grid gap-3 sm:grid-cols-2">
+        {heroHighlights.map((item) => (
+          <div class="rounded-md bg-white/12 px-4 py-3 text-sm font-bold ring-1 ring-white/15">{item}</div>
+        ))}
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto -mt-16 grid max-w-6xl gap-3 px-4 pb-8 sm:grid-cols-3">
+    {trustPoints.map((point) => (
+      <div class="rounded-md bg-white p-5 text-ink shadow-soft">
+        <strong class="text-2xl text-jade-700">{point.value}</strong>
+        <p class="mt-1 text-sm font-semibold text-slate-600">{point.label}</p>
+      </div>
+    ))}
+  </div>
+</section>

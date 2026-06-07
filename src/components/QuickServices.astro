@@ -1,0 +1,24 @@
+---
+import { quickServices } from "@data/services";
+import { assetPath } from "@utils/paths";
+---
+
+<section id="services" class="bg-white py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="section-heading">
+      <span>服務快捷入口</span>
+      <h2>搬屋公司常見需要，直接揀啱服務</h2>
+    </div>
+    <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {quickServices.map((service) => (
+        <a class="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft" href={service.href}>
+          <img class="h-44 w-full object-cover" src={assetPath(service.image)} width="900" height="650" alt={service.title} />
+          <div class="p-5">
+            <h3 class="text-xl font-black text-ink group-hover:text-jade-700">{service.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">{service.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

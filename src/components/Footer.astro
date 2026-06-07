@@ -1,0 +1,33 @@
+---
+import { site } from "@data/site";
+import { assetPath } from "@utils/paths";
+---
+
+<footer id="contact" class="relative isolate overflow-hidden bg-jade-900 text-white">
+  <img class="absolute inset-0 -z-20 h-full w-full object-cover opacity-25" src={assetPath("/images/footer-cta-bg.png")} width="1600" height="900" alt="搬屋公司查詢背景" />
+  <div class="absolute inset-0 -z-10 bg-jade-900/85"></div>
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-[1fr_0.75fr]">
+    <div>
+      <h2 class="text-3xl font-black">{site.companyName}</h2>
+      <p class="mt-4 max-w-2xl leading-8 text-white/82">
+        想知道搬屋大概幾錢，最有效係即刻 WhatsApp 傳相。講清楚日期、地區、樓層同物件，我哋就可以幫你初步估價。
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="rounded-full bg-amberline px-6 py-3 font-black text-ink hover:bg-white" href={site.whatsappHref}>WhatsApp {site.phoneDisplay}</a>
+        <a class="rounded-full border border-white/60 px-6 py-3 font-black text-white hover:bg-white hover:text-ink" href={site.phoneHref}>Click-to-call</a>
+      </div>
+    </div>
+    <div class="rounded-lg bg-white p-6 text-ink">
+      <h3 class="text-xl font-black">查詢時最好提供</h3>
+      <ul class="mt-4 space-y-3 text-sm font-semibold text-slate-700">
+        <li class="check-line">新舊地址地區、樓層、有冇電梯</li>
+        <li class="check-line">大件傢俬及電器相片</li>
+        <li class="check-line">紙箱大約數量</li>
+        <li class="check-line">想搬日期及時段</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/15 px-4 py-5 text-center text-sm text-white/70">
+    © {new Date().getFullYear()} {site.companyName}. GitHub Pages static website.
+  </div>
+</footer>

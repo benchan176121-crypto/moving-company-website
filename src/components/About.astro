@@ -1,0 +1,29 @@
+---
+import { site } from "@data/site";
+---
+
+<section id="about" class="bg-jade-50 py-16">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[1fr_0.75fr] lg:items-center">
+    <div>
+      <div class="section-heading left">
+        <span>關於我們</span>
+        <h2>{site.companyName}</h2>
+      </div>
+      <p class="mt-5 text-lg leading-9 text-slate-700">
+        我哋主力做香港住宅搬屋、寫字樓搬遷、本地貨運、傢俬拆裝、包裝物料、存倉同棄置傢俬。老闆最怕搬屋報價唔清楚、臨場先話加錢，所以網站重點會引導客人先 WhatsApp 傳相，搬前講清楚物件、路線、樓層、人手同車輛安排。
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        {["先溝通", "先報價", "準時到場", "搬後跟進"].map((item) => (
+          <span class="rounded-full bg-white px-4 py-2 text-sm font-bold text-jade-800 shadow-sm">{item}</span>
+        ))}
+      </div>
+    </div>
+    <div class="rounded-lg bg-white p-6 shadow-soft">
+      <p class="text-sm font-bold uppercase tracking-[0.18em] text-clay">老闆角度重點</p>
+      <h3 class="mt-3 text-2xl font-black text-ink">網站唔只靚，最緊要幫你接查詢</h3>
+      <p class="mt-4 leading-7 text-slate-600">
+        頁面會不斷引導客人做三件事：傳相、講日期地區、確認報價。咁可以減少來回追問，亦提高 WhatsApp 成交機會。
+      </p>
+    </div>
+  </div>
+</section>

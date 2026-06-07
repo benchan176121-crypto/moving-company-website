@@ -1,0 +1,22 @@
+---
+import { checklist } from "@data/checklist";
+---
+
+<section id="checklist" class="bg-slate-50 py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="section-heading">
+      <span>搬屋 Checklist</span>
+      <h2>搬屋前照住做，少啲漏嘢同臨時混亂</h2>
+    </div>
+    <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {checklist.map((group) => (
+        <article class="rounded-lg bg-white p-5 shadow-sm">
+          <h3 class="text-xl font-black text-jade-800">{group.title}</h3>
+          <ul class="mt-4 space-y-3 text-sm font-semibold text-slate-700">
+            {group.items.map((item) => <li class="check-line">{item}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

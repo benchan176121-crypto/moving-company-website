@@ -1,0 +1,29 @@
+---
+import { navigation, site } from "@data/site";
+---
+
+<header class="sticky top-0 z-40 border-b border-white/70 bg-white/95 backdrop-blur">
+  <div class="bg-jade-900 text-white">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm">
+      <span>{site.slogan}</span>
+      <a class="font-semibold hover:text-amberline" href={site.whatsappHref}>WhatsApp 快速報價：{site.phoneDisplay}</a>
+    </div>
+  </div>
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
+    <a href="#top" class="group">
+      <p class="text-xl font-black text-jade-900 sm:text-2xl">{site.shortName}</p>
+      <p class="text-xs font-medium text-slate-600">香港搬屋 · 貨運 · 存倉</p>
+    </a>
+    <nav class="hidden items-center gap-5 text-sm font-semibold text-slate-700 lg:flex">
+      {navigation.map((item) => <a class="hover:text-jade-700" href={item.href}>{item.label}</a>)}
+    </nav>
+    <div class="flex items-center gap-2">
+      <a class="hidden rounded-full border border-jade-700 px-4 py-2 text-sm font-bold text-jade-800 hover:bg-jade-50 sm:inline-flex" href={site.phoneHref}>
+        致電 {site.phoneDisplay}
+      </a>
+      <a class="rounded-full bg-jade-700 px-4 py-2 text-sm font-bold text-white shadow-soft hover:bg-jade-900" href={site.whatsappHref}>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</header>

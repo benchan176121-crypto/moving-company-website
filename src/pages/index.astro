@@ -1,0 +1,77 @@
+---
+import "@styles/global.css";
+import Header from "@components/Header.astro";
+import Hero from "@components/Hero.astro";
+import QuickServices from "@components/QuickServices.astro";
+import About from "@components/About.astro";
+import IncludedServices from "@components/IncludedServices.astro";
+import PackingGrid from "@components/PackingGrid.astro";
+import QuoteProcess from "@components/QuoteProcess.astro";
+import PricingSection from "@components/PricingSection.astro";
+import StorageSection from "@components/StorageSection.astro";
+import DisposalSection from "@components/DisposalSection.astro";
+import ChecklistSection from "@components/ChecklistSection.astro";
+import FaqSection from "@components/FaqSection.astro";
+import Footer from "@components/Footer.astro";
+import FloatingActions from "@components/FloatingActions.astro";
+import { localBusinessSchema, site } from "@data/site";
+import { assetPath } from "@utils/paths";
+
+const canonicalUrl = site.canonicalUrl;
+const ogImageUrl = `${site.canonicalUrl.replace(/\/$/, "")}${site.ogImage}`;
+---
+
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.title}</title>
+    <meta name="description" content={site.description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0d674d" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href={assetPath(site.favicon)} type="image/svg+xml" />
+    <meta property="og:title" content={site.title} />
+    <meta property="og:description" content={site.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_HK" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- LocalBusiness structured data / LocalBusiness schema placeholder -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+  </head>
+  <body class="bg-white text-ink antialiased">
+    <!-- Header / 導航 -->
+    <Header />
+    <main>
+      <!-- Hero 首屏 -->
+      <Hero />
+      <!-- 服務快捷入口 -->
+      <QuickServices />
+      <!-- 關於我們 -->
+      <About />
+      <!-- 搬屋服務已包括 -->
+      <IncludedServices />
+      <!-- 包裝物料 Grid -->
+      <PackingGrid />
+      <!-- WhatsApp / 網上報價流程 -->
+      <QuoteProcess />
+      <!-- 收費參考 -->
+      <PricingSection />
+      <!-- 存倉服務 -->
+      <StorageSection />
+      <!-- 棄置傢俬服務 -->
+      <DisposalSection />
+      <!-- 搬屋 Checklist -->
+      <ChecklistSection />
+      <!-- FAQ -->
+      <FaqSection />
+    </main>
+    <!-- Footer -->
+    <Footer />
+    <!-- WhatsApp 浮動按鈕 / Click-to-call 按鈕 -->
+    <FloatingActions />
+  </body>
+</html>

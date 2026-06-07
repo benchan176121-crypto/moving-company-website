@@ -1,0 +1,24 @@
+---
+import { storageFeatures } from "@data/services";
+import { site } from "@data/site";
+import { assetPath } from "@utils/paths";
+---
+
+<section id="storage" class="bg-white py-16">
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-2 lg:items-center">
+    <img class="h-full min-h-[360px] w-full rounded-lg object-cover shadow-soft" src={assetPath("/images/service-storage.png")} width="1100" height="800" alt="存倉服務" />
+    <div>
+      <div class="section-heading left">
+        <span>存倉服務</span>
+        <h2>裝修、過渡期、公司物資，都可以暫存</h2>
+      </div>
+      <p class="mt-5 leading-8 text-slate-700">
+        如果新舊地方未銜接、裝修未完、或者公司貨物需要短期存放，可以先 WhatsApp 俾物件相同大約尺寸，我哋再按體積、日數同搬運安排報價。
+      </p>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+        {storageFeatures.map((item) => <li class="check-line rounded-md bg-jade-50 p-4 font-bold text-ink">{item}</li>)}
+      </ul>
+      <a class="mt-7 inline-flex rounded-full bg-jade-700 px-6 py-3 font-black text-white hover:bg-jade-900" href={site.whatsappHref}>查詢存倉報價</a>
+    </div>
+  </div>
+</section>

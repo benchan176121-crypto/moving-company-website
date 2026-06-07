@@ -1,0 +1,20 @@
+---
+import { includedServices } from "@data/services";
+---
+
+<section id="included" class="bg-white py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="section-heading">
+      <span>搬屋服務已包括</span>
+      <h2>由查詢到搬完，每一步都講清楚</h2>
+    </div>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {includedServices.map((item, index) => (
+        <div class="rounded-lg border border-slate-200 bg-slate-50 p-5">
+          <span class="text-sm font-black text-amberline">{String(index + 1).padStart(2, "0")}</span>
+          <p class="mt-2 font-bold leading-7 text-ink">{item}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
