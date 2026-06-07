@@ -19,6 +19,8 @@ const requiredFiles = [
   "tsconfig.json",
   ".github/workflows/deploy-github-pages.yml",
   "public/favicon.svg",
+  "public/robots.txt",
+  "public/sitemap.xml",
   "src/pages/index.astro",
   "src/styles/global.css",
   "src/data/site.ts",
@@ -90,9 +92,16 @@ for (const snippet of [
   "https://wa.me/85293577729",
   "tel:93577729",
   "快靚正搬屋公司｜香港搬屋、搬運、傢俬拆裝、存倉服務",
-  "快靚正搬屋公司提供香港住宅搬屋、寫字樓搬遷、傢俬拆裝、包裝物料、棄置傢俬及存倉服務。",
-  "村屋吊運 / 大型傢俬上落",
+  "快靚正搬屋公司提供香港住宅搬屋、村屋吊運、寫字樓搬遷、傢俬拆裝、包裝物料、棄置傢俬及存倉服務。",
+  "https://benchan176121-crypto.github.io/moving-company-website/",
+  "香港搬屋",
   "村屋吊運",
+  "快靚正搬屋公司搬屋貨車及香港搬運服務",
+  "村屋吊運 / 大型傢俬上落",
+  "MovingCompany",
+  "WebSite",
+  "FAQPage",
+  "ContactPoint",
 ]) {
   assert.ok(siteData.includes(snippet), `site data should include ${snippet}`);
 }
@@ -113,7 +122,12 @@ for (const snippet of [
   "FAQ",
   "FloatingActions",
   "application/ld+json",
-  "LocalBusiness",
+  "structuredData",
+  "og:site_name",
+  "og:image:alt",
+  "twitter:title",
+  "twitter:description",
+  "twitter:image",
 ]) {
   assert.ok(page.includes(snippet), `index.astro should include ${snippet}`);
 }
@@ -185,3 +199,28 @@ for (const snippet of [
 ]) {
   assert.ok(domainDoc.includes(snippet), `DOMAIN_SETUP.md should include ${snippet}`);
 }
+
+const robots = read("public/robots.txt");
+for (const snippet of [
+  "User-agent: *",
+  "Allow: /",
+  "Sitemap: https://benchan176121-crypto.github.io/moving-company-website/sitemap.xml",
+]) {
+  assert.ok(robots.includes(snippet), `robots.txt should include ${snippet}`);
+}
+
+const sitemap = read("public/sitemap.xml");
+for (const snippet of [
+  "<urlset",
+  "<loc>https://benchan176121-crypto.github.io/moving-company-website/</loc>",
+  "<changefreq>weekly</changefreq>",
+  "<priority>1.0</priority>",
+]) {
+  assert.ok(sitemap.includes(snippet), `sitemap.xml should include ${snippet}`);
+}
+
+const astroConfig = read("astro.config.mjs");
+assert.ok(
+  astroConfig.includes("https://benchan176121-crypto.github.io/moving-company-website"),
+  "Astro config should default to the live GitHub Pages URL"
+);
