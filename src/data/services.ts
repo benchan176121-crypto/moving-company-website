@@ -25,54 +25,6 @@ export const quickServices = [
   }
 ];
 
-export const serviceGalleryImages = [
-  {
-    title: "住宅搬屋實景",
-    description: "搬屋工人、紙箱、傢俬保護一次過展示。",
-    image: "/images/service-home-moving.png"
-  },
-  {
-    title: "WhatsApp 報價流程",
-    description: "客人一睇就明白點樣傳相、報價、預約。",
-    image: "/images/booking-whatsapp.png"
-  },
-  {
-    title: "寫字樓搬遷",
-    description: "展示商業搬遷同文件設備搬運形象。",
-    image: "/images/service-office-moving.png"
-  },
-  {
-    title: "專業包裝服務",
-    description: "氣泡紙、保護膜、紙箱包裝更有信任感。",
-    image: "/images/service-packing.png"
-  },
-  {
-    title: "存倉服務",
-    description: "適合裝修、過渡期、貨物暫存。",
-    image: "/images/service-storage.png"
-  },
-  {
-    title: "搬屋紙箱",
-    description: "常用包裝物料，方便分類同保護物件。",
-    image: "/images/packing-box.png"
-  },
-  {
-    title: "氣泡紙及保護膜",
-    description: "保護易碎品、電器同傢俬表面。",
-    image: "/images/packing-bubble-wrap.png"
-  },
-  {
-    title: "封箱膠紙",
-    description: "搬屋包裝基本用品，細節都要展示。",
-    image: "/images/packing-tape.png"
-  },
-  {
-    title: "頁尾查詢背景",
-    description: "同一套品牌視覺，放到頁尾 CTA 都唔浪費。",
-    image: "/images/footer-cta-bg.png"
-  }
-];
-
 export const includedServices = [
   "搬運前初步溝通及物件清單整理",
   "基本傢俬及電器搬運保護",
