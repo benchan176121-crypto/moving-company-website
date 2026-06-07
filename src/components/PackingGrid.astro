@@ -12,7 +12,9 @@ import { assetPath } from "@utils/paths";
     <div class="mt-8 grid gap-5 md:grid-cols-3">
       {packingMaterials.map((item) => (
         <article class="overflow-hidden rounded-lg bg-white shadow-sm">
-          <img class="h-56 w-full object-cover" src={assetPath(item.image)} width="900" height="650" alt={item.title} />
+          <div class="flex aspect-[4/3] items-center justify-center bg-slate-100">
+            <img class="h-full w-full object-contain" src={assetPath(item.image)} width="900" height="650" alt={item.title} />
+          </div>
           <div class="p-5">
             <h3 class="text-xl font-black text-ink">{item.title}</h3>
             <p class="mt-2 leading-7 text-slate-600">{item.description}</p>

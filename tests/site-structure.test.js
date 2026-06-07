@@ -124,6 +124,17 @@ for (const snippet of ["老闆角度重點", "網站唔只靚，最緊要幫你�
   assert.ok(!aboutComponent.includes(snippet), `About.astro should not include ${snippet}`);
 }
 
+for (const filePath of [
+  "src/components/QuickServices.astro",
+  "src/components/PackingGrid.astro",
+  "src/components/QuoteProcess.astro",
+  "src/components/StorageSection.astro",
+]) {
+  const content = read(filePath);
+  assert.ok(content.includes("object-contain"), `${filePath} should show content images in full proportion`);
+  assert.ok(!content.includes("object-cover"), `${filePath} should not crop content images`);
+}
+
 for (const filePath of ["README.md", "DEPLOY_GITHUB_PAGES.md", "DOMAIN_SETUP.md", "TODO_FOR_BOSS.md"]) {
   const content = read(filePath);
   assert.ok(content.includes("GitHub Pages"), `${filePath} should explain GitHub Pages`);
