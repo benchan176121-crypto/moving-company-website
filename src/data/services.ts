@@ -63,13 +63,13 @@ export const quoteSteps = [
     step: "02",
     title: "確認資料",
     description: "提供搬屋日期、地區、樓層、有冇電梯、有冇樓梯或推遠路。",
-    image: "/images/service-home-moving.png"
+    image: "/images/quote-confirm-details.png"
   },
   {
     step: "03",
     title: "初步報價",
     description: "師傅按資料估算人手、車輛、時間同可能額外收費。",
-    image: "/images/service-office-moving.png"
+    image: "/images/quote-initial-estimate.png"
   }
 ];
 

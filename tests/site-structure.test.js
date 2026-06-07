@@ -46,6 +46,8 @@ const requiredImages = [
   "packing-bubble-wrap.png",
   "packing-tape.png",
   "booking-whatsapp.png",
+  "quote-confirm-details.png",
+  "quote-initial-estimate.png",
   "footer-cta-bg.png",
 ];
 
@@ -114,6 +116,16 @@ for (const snippet of [
 }
 
 const servicesData = read("src/data/services.ts");
+for (const snippet of [
+  'title: "WhatsApp 傳相"',
+  'image: "/images/booking-whatsapp.png"',
+  'title: "確認資料"',
+  'image: "/images/quote-confirm-details.png"',
+  'title: "初步報價"',
+  'image: "/images/quote-initial-estimate.png"',
+]) {
+  assert.ok(servicesData.includes(snippet), `quote process should include ${snippet}`);
+}
 assert.ok(!servicesData.includes("serviceGalleryImages"), "services data should not include removed service gallery data");
 assert.ok(!exists("src/components/ServiceGallery.astro"), "removed service gallery component should not exist");
 assert.ok(!page.includes("ServiceGallery"), "index.astro should not import or render ServiceGallery");
