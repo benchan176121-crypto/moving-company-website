@@ -117,6 +117,14 @@ for (const snippet of [
 ]) {
   assert.ok(page.includes(snippet), `index.astro should include ${snippet}`);
 }
+assert.ok(
+  page.indexOf("<QuickServices />") < page.indexOf("<QuoteProcess />"),
+  "quote process should appear after quick services"
+);
+assert.ok(
+  page.indexOf("<QuoteProcess />") < page.indexOf("<About />"),
+  "quote process should appear before about section"
+);
 
 const servicesData = read("src/data/services.ts");
 assert.ok(servicesData.indexOf('title: "村屋吊運"') < servicesData.indexOf('title: "住宅搬屋"'), "village hoisting should be the first quick service");
