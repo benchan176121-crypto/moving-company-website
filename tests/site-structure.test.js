@@ -48,6 +48,7 @@ const requiredImages = [
   "booking-whatsapp.png",
   "quote-confirm-details.png",
   "quote-initial-estimate.png",
+  "service-village-hoisting.png",
   "footer-cta-bg.png",
 ];
 
@@ -90,6 +91,8 @@ for (const snippet of [
   "tel:93577729",
   "快靚正搬屋公司｜香港搬屋、搬運、傢俬拆裝、存倉服務",
   "快靚正搬屋公司提供香港住宅搬屋、寫字樓搬遷、傢俬拆裝、包裝物料、棄置傢俬及存倉服務。",
+  "村屋吊運 / 大型傢俬上落",
+  "村屋吊運",
 ]) {
   assert.ok(siteData.includes(snippet), `site data should include ${snippet}`);
 }
@@ -116,7 +119,11 @@ for (const snippet of [
 }
 
 const servicesData = read("src/data/services.ts");
+assert.ok(servicesData.indexOf('title: "村屋吊運"') < servicesData.indexOf('title: "住宅搬屋"'), "village hoisting should be the first quick service");
 for (const snippet of [
+  'title: "村屋吊運"',
+  'image: "/images/service-village-hoisting.png"',
+  "村屋吊運、大型傢俬上落",
   'title: "WhatsApp 傳相"',
   'image: "/images/booking-whatsapp.png"',
   'title: "確認資料"',
@@ -146,6 +153,10 @@ for (const filePath of [
   assert.ok(content.includes("object-contain"), `${filePath} should show content images in full proportion`);
   assert.ok(!content.includes("object-cover"), `${filePath} should not crop content images`);
 }
+
+const quickServicesComponent = read("src/components/QuickServices.astro");
+assert.ok(quickServicesComponent.includes("md:col-span-2"), "featured quick service should be wider on tablet");
+assert.ok(quickServicesComponent.includes("lg:col-span-2"), "featured quick service should be wider on desktop");
 
 for (const filePath of ["README.md", "DEPLOY_GITHUB_PAGES.md", "DOMAIN_SETUP.md", "TODO_FOR_BOSS.md"]) {
   const content = read(filePath);

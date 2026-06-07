@@ -11,7 +11,10 @@ import { assetPath } from "@utils/paths";
     </div>
     <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
       {quickServices.map((service) => (
-        <a class="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft" href={service.href}>
+        <a
+          class={`group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft ${service.featured ? "md:col-span-2 lg:col-span-2" : ""}`}
+          href={service.href}
+        >
           <div class="flex aspect-[4/3] items-center justify-center bg-slate-100">
             <img class="h-full w-full object-contain" src={assetPath(service.image)} width="900" height="650" alt={service.title} />
           </div>

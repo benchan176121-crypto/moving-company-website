@@ -33,10 +33,10 @@ export const navigation = [
 ];
 
 export const heroHighlights = [
+  "村屋吊運 / 大型傢俬上落",
   "住宅搬屋 / 寫字樓搬遷",
   "傢俬拆裝 / 包裝保護",
-  "存倉 / 棄置傢俬",
-  "WhatsApp 傳相初步報價"
+  "存倉 / 棄置傢俬"
 ];
 
 export const trustPoints = [
@@ -58,6 +58,7 @@ export const localBusinessSchema = {
   priceRange: "$$",
   serviceType: [
     "香港住宅搬屋",
+    "村屋吊運",
     "寫字樓搬遷",
     "傢俬拆裝",
     "包裝物料",

@@ -1,5 +1,12 @@
 export const quickServices = [
   {
+    title: "村屋吊運",
+    description: "村屋、唐樓、大型傢俬入唔到𨋢或樓梯時，可先相片評估吊運方案。",
+    image: "/images/service-village-hoisting.png",
+    href: "#included",
+    featured: true
+  },
+  {
     title: "住宅搬屋",
     description: "唐樓、屋苑、村屋、劏房搬遷，先睇清楚環境再安排人手同車。",
     image: "/images/service-home-moving.png",
@@ -26,6 +33,7 @@ export const quickServices = [
 ];
 
 export const includedServices = [
+  "村屋吊運、大型傢俬上落及現場風險初步評估",
   "搬運前初步溝通及物件清單整理",
   "基本傢俬及電器搬運保護",
   "大型傢俬拆裝及重組建議",
