@@ -122,8 +122,8 @@ assert.ok(
   "quote process should appear after quick services"
 );
 assert.ok(
-  page.indexOf("<QuoteProcess />") < page.indexOf("<About />"),
-  "quote process should appear before about section"
+  page.indexOf("<FaqSection />") < page.indexOf("<About />"),
+  "about section should appear after FAQ"
 );
 
 const servicesData = read("src/data/services.ts");
