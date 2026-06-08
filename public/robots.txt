@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://benchan176121-crypto.github.io/moving-company-website/sitemap.xml
+Sitemap: https://hkmoving99.com/sitemap.xml

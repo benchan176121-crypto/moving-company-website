@@ -24,7 +24,7 @@ export const site = {
     "貨運公司",
     "WhatsApp 搬屋報價"
   ],
-  canonicalUrl: "https://benchan176121-crypto.github.io/moving-company-website/",
+  canonicalUrl: "https://hkmoving99.com/",
   ogImage: "/images/hero-moving-truck.png",
   ogImageAlt: "快靚正搬屋公司搬屋貨車及香港搬運服務",
   favicon: "/favicon.svg",

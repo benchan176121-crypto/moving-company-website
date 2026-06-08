@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          SITE_URL: https://www.your-domain.com
+          SITE_URL: https://hkmoving99.com
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -19,6 +19,7 @@ const requiredFiles = [
   "tsconfig.json",
   ".github/workflows/deploy-github-pages.yml",
   "public/favicon.svg",
+  "public/CNAME",
   "public/robots.txt",
   "public/sitemap.xml",
   "src/pages/index.astro",
@@ -94,7 +95,7 @@ for (const snippet of [
   "tel:93577729",
   "快靚正搬屋公司｜香港搬屋、搬運、傢俬拆裝、存倉服務",
   "快靚正搬屋公司提供香港住宅搬屋、村屋吊運、寫字樓搬遷、傢俬拆裝、包裝物料、棄置傢俬及存倉服務。",
-  "https://benchan176121-crypto.github.io/moving-company-website/",
+  "https://hkmoving99.com/",
   "香港搬屋",
   "村屋吊運",
   "快靚正搬屋公司搬屋貨車及香港搬運服務",
@@ -201,11 +202,14 @@ for (const snippet of [
   assert.ok(domainDoc.includes(snippet), `DOMAIN_SETUP.md should include ${snippet}`);
 }
 
+const cname = read("public/CNAME").trim();
+assert.equal(cname, "hkmoving99.com", "CNAME should use the formal custom domain");
+
 const robots = read("public/robots.txt");
 for (const snippet of [
   "User-agent: *",
   "Allow: /",
-  "Sitemap: https://benchan176121-crypto.github.io/moving-company-website/sitemap.xml",
+  "Sitemap: https://hkmoving99.com/sitemap.xml",
 ]) {
   assert.ok(robots.includes(snippet), `robots.txt should include ${snippet}`);
 }
@@ -213,7 +217,7 @@ for (const snippet of [
 const sitemap = read("public/sitemap.xml");
 for (const snippet of [
   "<urlset",
-  "<loc>https://benchan176121-crypto.github.io/moving-company-website/</loc>",
+  "<loc>https://hkmoving99.com/</loc>",
   "<changefreq>weekly</changefreq>",
   "<priority>1.0</priority>",
 ]) {
@@ -222,6 +226,6 @@ for (const snippet of [
 
 const astroConfig = read("astro.config.mjs");
 assert.ok(
-  astroConfig.includes("https://benchan176121-crypto.github.io/moving-company-website"),
+  astroConfig.includes("https://hkmoving99.com"),
   "Astro config should default to the live GitHub Pages URL"
 );
