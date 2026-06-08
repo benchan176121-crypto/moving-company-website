@@ -1,3 +1,5 @@
+const whatsappMessage = "我喺Google上面見到你,查詢搬屋報價。";
+
 export const site = {
   companyName: "快靚正搬屋公司 / 貨運公司",
   shortName: "快靚正搬屋",
@@ -5,7 +7,8 @@ export const site = {
   phone: "93577729",
   phoneDisplay: "9357 7729",
   phoneHref: "tel:93577729",
-  whatsappHref: "https://wa.me/85293577729",
+  whatsappMessage,
+  whatsappHref: `https://wa.me/85293577729?text=${encodeURIComponent(whatsappMessage)}`,
   title: "快靚正搬屋公司｜香港搬屋、搬運、傢俬拆裝、存倉服務",
   description:
     "快靚正搬屋公司提供香港住宅搬屋、村屋吊運、寫字樓搬遷、傢俬拆裝、包裝物料、棄置傢俬及存倉服務。WhatsApp 傳相即可初步報價。",
